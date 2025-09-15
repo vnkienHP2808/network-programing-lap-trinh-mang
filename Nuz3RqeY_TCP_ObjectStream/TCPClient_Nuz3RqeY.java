@@ -1,4 +1,4 @@
-package TCP;
+package Nuz3RqeY_TCP_ObjectStream;
 
 import java.io.EOFException;
 import java.io.IOException;
