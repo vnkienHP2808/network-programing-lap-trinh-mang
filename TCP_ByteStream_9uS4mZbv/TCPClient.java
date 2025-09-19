@@ -9,7 +9,8 @@ import java.lang.Math;
 import Config.ConfigFile;
 
 /*
- [Mã câu hỏi (qCode): 9uS4mZbv].  Một chương trình server hỗ trợ kết nối qua giao thức TCP tại cổng 2206 (hỗ trợ thời gian giao tiếp tối đa cho mỗi yêu cầu là 5s). Yêu cầu xây dựng chương trình client thực hiện kết nối tới server sử dụng luồng byte dữ liệu (InputStream/OutputStream) để trao đổi thông tin theo thứ tự:
+ [Mã câu hỏi (qCode): 9uS4mZbv].  Một chương trình server hỗ trợ kết nối qua giao thức TCP tại cổng 2206 (hỗ trợ thời gian giao tiếp tối đa cho mỗi yêu cầu là 5s). 
+ Yêu cầu xây dựng chương trình client thực hiện kết nối tới server sử dụng luồng byte dữ liệu (InputStream/OutputStream) để trao đổi thông tin theo thứ tự:
 a. Gửi mã sinh viên và mã câu hỏi theo định dạng "studentCode;qCode".
 Ví dụ: "B16DCCN999;C89DAB45"
 b. Nhận dữ liệu từ server là một chuỗi các số nguyên được phân tách bởi ký tự ",".

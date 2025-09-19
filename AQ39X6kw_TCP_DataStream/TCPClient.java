@@ -7,9 +7,10 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 import Config.ConfigFile;
-
+import java.util.Arrays;
 /*
- [Mã câu hỏi (qCode): AQ39X6kw].  Một chương trình server cho phép kết nối qua TCP tại cổng 2207 (hỗ trợ thời gian liên lạc tối đa cho mỗi yêu cầu là 5 giây). Yêu cầu xây dựng chương trình client thực hiện giao tiếp với server sử dụng luồng data (DataInputStream/DataOutputStream) để trao đổi thông tin theo thứ tự:
+ [Mã câu hỏi (qCode): AQ39X6kw].  Một chương trình server cho phép kết nối qua TCP tại cổng 2207 (hỗ trợ thời gian liên lạc tối đa cho mỗi yêu cầu là 5 giây). 
+ Yêu cầu xây dựng chương trình client thực hiện giao tiếp với server sử dụng luồng data (DataInputStream/DataOutputStream) để trao đổi thông tin theo thứ tự:
 a. Gửi mã sinh viên và mã câu hỏi theo định dạng "studentCode;qCode".
 Ví dụ: "B10DCCN003;C6D7E8F9"
 b. Nhận lần lượt:
