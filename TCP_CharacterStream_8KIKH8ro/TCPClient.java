@@ -37,6 +37,7 @@ public class TCPClient {
         System.out.println("Send StudentCode and qCode");
 
         String data = br.readLine();
+        
         System.out.println("Get data:\n" + data);
 
         String result = revertAndRLE(data);

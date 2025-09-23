@@ -14,7 +14,8 @@ a. Gửi mã sinh viên và mã câu hỏi theo định dạng "studentCode;qCod
 Ví dụ: "B16DCCN999;E56FAB67"
 b. Nhận dữ liệu từ server là một chuỗi các số nguyên được phân tách bởi ký tự ",".
 Ví dụ: " 3,7,2,5,8,1"
-c. Tìm vị trí mà độ lệch của tổng bên trái và tổng bên phải là nhỏ nhất -> Gửi lên server vị trí đó, tổng trái, tổng phải và độ lệch. Ví dụ: với dãy " 3,7,2,5,8,1", vị trí 3 có độ lệch nhỏ nhất = 3 → Kết quả gửi server: "3,12,9,3"
+c. Tìm vị trí mà độ lệch của tổng bên trái và tổng bên phải là nhỏ nhất -> Gửi lên server vị trí đó, tổng trái, tổng phải và độ lệch. Ví dụ: với dãy " 3,7,2,5,8,1",
+    vị trí 3 có độ lệch nhỏ nhất = 3 → Kết quả gửi server: "3,12,9,3"
 d. Đóng kết nối và kết thúc chương trình.
  */
 
@@ -54,6 +55,7 @@ public class TCPClient {
         String[] dataString = data.split("\\,");
         int[] sumArray = new int[dataString.length];
 
+        // mảng cộng dồn
         for(int i = 0; i < dataString.length; i++){
             if(i == 0) sumArray[i] = Integer.parseInt(dataString[i]);
             else{

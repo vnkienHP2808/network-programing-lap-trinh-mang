@@ -70,27 +70,19 @@ public class TCPClient_Nuz3RqeY {
         String[] data = addressLine.split("\\s+");
         StringBuilder sb = new StringBuilder("");
         for(String s : data){
-            for(int i = 0; i < s.length(); i++){
-                if(i == 0 && s.charAt(0) >= 'a' && s.charAt(0) <= 'z' || s.charAt(0) >= 'A' && s.charAt(0) <= 'Z'){
-                    sb.append(s.substring(0, 1).toUpperCase());
-                }
-                else if(s.charAt(i) < 'a' && s.charAt(i) > 'z' || s.charAt(0) < 'a' && s.charAt(0) > 'z'){
-                    continue;
-                }
-                else{
-                    sb.append(s.substring(i, i+1).toLowerCase());
+            if (!s.isEmpty()) {
+                    s = s.replaceAll("[^a-zA-Z0-9\\s]", "");
+                    if (!s.isEmpty()) {
+                        sb.append(s.substring(0, 1).toUpperCase())
+                                .append(s.substring(1).toLowerCase())
+                                .append(" ");
+                    }
                 }
             }
-            if(!s.equals(data[data.length-1])) sb.append(" ");
-        }
-        return sb.toString();
+        return sb.toString().trim();
     }
 
     public static String processPostalCode(String postalCode){
-        StringBuilder sb = new StringBuilder("");
-        for(int i = 0; i < postalCode.length(); i++){
-            if(postalCode.charAt(i) == '-' || postalCode.charAt(i) >= '0' && postalCode.charAt(i) <= '9') sb.append(postalCode.charAt(i)); 
-        }
-        return sb.toString();
+        return postalCode.replaceAll("[^0-9-]","");
     }
 }

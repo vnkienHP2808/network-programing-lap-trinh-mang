@@ -78,17 +78,22 @@ public class TCPClient {
 
     public static String process(String data) {
         String[] dataSplit = data.split("\\,");
-        boolean isIncrease = true;
+        int isIncrease = 0; // 1: tăng; -1: giảm
         int change = 0;
         int sum = 0;
         for (int i = 0; i < dataSplit.length - 1; i++) {
-            if ((Integer.parseInt(dataSplit[i]) < Integer.parseInt(dataSplit[i + 1]) && isIncrease == false)
-                    || (Integer.parseInt(dataSplit[i]) > Integer.parseInt(dataSplit[i + 1]) && isIncrease == true)){
+            int x = Integer.parseInt(dataSplit[i]);
+            int y = Integer.parseInt(dataSplit[i + 1]);
+            
+            sum += Math.abs(x - y);
+
+            if(i != 0){
+                if ((x < y && isIncrease == -1) || (x > y && isIncrease == 1)){
                         change++;
-                        if(Integer.parseInt(dataSplit[i]) < Integer.parseInt(dataSplit[i + 1])) isIncrease = true;
-                        if(Integer.parseInt(dataSplit[i]) > Integer.parseInt(dataSplit[i + 1])) isIncrease = false;
-                    }
-            sum += Math.abs(Integer.parseInt(dataSplit[i]) - Integer.parseInt(dataSplit[i + 1]));
+                }
+            }
+            if(x < y) isIncrease = 1;
+            else if(x > y) isIncrease = -1;
         }
         return change + "," + sum;
     }
