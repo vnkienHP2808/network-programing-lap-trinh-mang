@@ -1,4 +1,4 @@
-package TopicTCP.Nuz3RqeY_TCP_ObjectStream.nDrTenmw_TCP_DataStream;
+package TopicTCP.nDrTenmw_TCP_DataStream;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
