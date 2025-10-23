@@ -43,7 +43,6 @@ public class TCPClient {
 
     public static String process(String caesar, int s){
         String tmp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String so = "0123456789";
         String result = "";
 
         for(int i = 0; i < caesar.length(); i++){
@@ -60,20 +59,8 @@ public class TCPClient {
                 }
 
                 result += tmp.charAt(26*k + idx - s) + "";
-            }   
-            else{
-                while(caesar.charAt(i) != so.charAt(idx)){
-                    idx++;
-                }
-
-                while(10*k + idx - s < 0){
-                    k++;
-                }
-
-                // Đéo hiểu sao phải +2 vào ditcu =))))
-                // Đúng kiểu đề bài sai bị lệch
-                result += so.charAt((10*k + idx - s +2) % 10) + ""; 
-            }
+            } 
+            else result += caesar.charAt(i);
         }
         return result;
     }
